@@ -8,18 +8,52 @@
     body { background: #ccffcc; font-family: 'Poppins', sans-serif; text-align: center; }
     h1 { padding: 20px; background: #aee6ae; }
     .gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 20px; }
-    .gallery img { width: 250px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-    a { display: block; margin: 20px; text-decoration: none; color: blue; }
+    .gallery img { width: 250px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); cursor: pointer; transition: transform 0.2s; }
+    .gallery img:hover { transform: scale(1.05); }
+
+    .lightbox { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; }
+    .lightbox img { max-width: 90%; max-height: 80%; border-radius: 12px; box-shadow: 0 0 20px white; }
+    .close { position: absolute; top: 20px; right: 30px; font-size: 2rem; color: white; cursor: pointer; font-weight: bold; }
   </style>
 </head>
 <body>
   <h1>Photo Gallery</h1>
   <div class="gallery">
-    <img src="photo1.jpg" alt="Mandiram1 Photo">
-    <img src="photo2.jpg" alt="Mandiram2 Photo">
-    <img src="photo3.jpg" alt="Mandiram3 Photo">
-    <img src="photo4.jpg" alt="Mandiram4 Photo">
-   </div>
+    <img src="photo1.jpg" alt="Mandiram Photo">
+    <img src="photo2.jpg" alt="Mandiram Photo">
+    <img src="photo3.jpg" alt="Mandiram Photo">
+    <img src="photo4.jpg" alt="Mandiram Photo">
+
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="Expanded View">
+  </div>
+
   <a href="index.html">⬅ Back to Home</a>
+
+  <script>
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.style.display = 'none';
+    }
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target !== lightboxImg) {
+        closeLightbox();
+      }
+    });
+  </script>
 </body>
 </html>

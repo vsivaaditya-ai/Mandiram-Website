@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="te">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,17 +9,33 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #ccffcc; /* Light pista green */
       text-align: center;
+      background: url('background.jpg') no-repeat center center fixed; 
+      background-size: cover;
     }
     header {
       padding: 20px;
-      background: #aee6ae;
-      border-bottom: 2px solid #7fd67f;
+      background: rgba(255,255,255,0.7);
+      border-bottom: 3px solid #7fd67f;
     }
     h1 {
       margin: 0;
+      font-size: 2.5rem;
+      color: darkgreen;
+      text-shadow: 2px 2px 4px white;
+    }
+    .divine-text {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px;
       font-size: 2rem;
+      font-weight: bold;
+    }
+    .divine-text span {
+      background: linear-gradient(45deg, red, orange, gold, green, blue, violet);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 1px 1px 2px black;
     }
     .images {
       display: flex;
@@ -31,37 +47,44 @@
     .images img {
       width: 250px;
       border-radius: 15px;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.4);
     }
     .links a {
       display: inline-block;
       margin: 20px;
       padding: 12px 24px;
-      background: #7fd67f;
-      color: black;
+      background: #ff9933;
+      color: white;
       text-decoration: none;
-      border-radius: 10px;
+      border-radius: 12px;
       font-weight: bold;
+      font-size: 1.1rem;
       transition: 0.3s;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
     }
     .links a:hover {
-      background: #5ccf5c;
-      color: white;
+      background: #cc6600;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Dattatreya & Shirdi Sai Dhyana Mandiram</h1>
+    <h1>దత్తాత్రేయ & శిర్డీ సాయి ధ్యాన మందిరం</h1>
     <p>Serving the community in devotion for 6 years 🙏</p>
   </header>
 
+  <div class="divine-text">
+    <span>శ్రద్ధా</span>
+    <span>సబూరి</span>
+  </div>
+
   <div class="images">
-    <img src="Dattatreya.jpg" alt="Lord Dattatreya">
+    <img src="dattatreya.jpg" alt="Lord Dattatreya">
     <img src="sai.jpg" alt="Shirdi Sai Baba">
   </div>
 
   <div class="links">
+    <a href="about.html">About Mandiram</a>
     <a href="photos.html">Photo Gallery</a>
     <a href="events.html">Annual Events</a>
   </div>
